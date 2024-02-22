@@ -1,46 +1,63 @@
-## OIDC Extended
+<div align="center">
+  <a href="https://github.com/empress-eco/oidc_extended">
+    <img src="https://grow.empress.eco/uploads/default/original/2X/1/1f1e1044d3864269d2a613577edb9763890422ab.png" alt="Logo" width="80" height="80">
+  </a>
 
-An extension to the ERPNext Social Login authentication method (OIDC) that incorporates new features designed to meet the needs of enterprises.
+<h2 align="center">OIDC Extended: Enterprise-Class Authentication for Empress</h2>
+<p align="center">
+An advanced extension to the Empress Social Login Key, designed to streamline enterprise-grade identity management and authentication.
+<br />
+<a href="https://empress.eco/"><strong>Explore the Docs »</strong></a>
+<br />
+<br />
+<a href="https://github.com/empress-eco/oidc_extended/issues">Report Bug</a>
+·
+<a href="https://github.com/empress-eco/oidc_extended/issues">Request Feature</a>
+</p>
+</div>
 
-Features:
+## About The Project
 
-- Group to Role mapping: maps the received *groups* as token claim to ERPNext roles.
-- Customizable claim names.
-- Specify the default role for the users that haven't logged in yet.
-- Automatically creates users from trusted identity providers even if signup is disabled in the site.
+### Overview
 
-![image](https://github.com/MohammedNoureldin/frappe-oidc-extended/assets/14913147/e72cd642-efb5-4aab-a954-77c3744adab4)
+OIDC Extended is an enterprise-grade extension for the Empress Social Login Key. It amplifies the authentication process, ensuring a seamless user experience, increased security, and streamlined operations.
 
-#### *Social Login Key* Configuration
+### Key Features
+- **Group to Role Mapping:** Maps the received groups as token claim to Empress roles directly.
+- **Customizable Claim Names:** Adapt claim names to your unique operational needs.
+- **Default Role Specification:** Define a default role for users that haven't logged in yet.
+- **Auto User Creation:** Automatically creates users from trusted identity providers, even if signup is disabled on the site.
 
-This app extends the functionality of Social Login Key, that is why it is important to configure the latter correctly to get this app work properly. Below is a simple functional configuration for Social Login Key module, which can be imported directly as a document in ERPNext.
+### Built With
+OIDC Extended leverages the robust Empress Social Login Key as its foundation.
 
-```json
-{
-    "name": "keycloak",
-    "enable_social_login": 1,
-    "social_login_provider": "Custom",
-    "client_id": "erpnext",
-    "provider_name": "keycloak",
-    "client_secret": "{{ erpnext_idp_client_secret }}",
-    "icon": "",
-    "base_url": "https://idp.{{ domain_name }}/realms/{{ keycloak_realm }}",
-    "authorize_url": "/protocol/openid-connect/auth",
-    "access_token_url": "/protocol/openid-connect/token",
-    "redirect_url": "/api/method/oidc_extended.callback.custom/keycloak",
-    "api_endpoint": "https://idp.{{ domain_name }}/realms/{{ keycloak_realm }}/protocol/openid-connect/userinfo",
-    "custom_base_url": 1,
-    "auth_url_data": "{\"response_type\": \"code\", \"scope\": \"openid profile email\"}",
-    "user_id_property": "preferred_username",
-    "doctype": "Social Login Key"
-}
-```
+## Getting Started
 
-Notes:
+### Prerequisites
+- Ensure Empress is installed and the Social Login Key is configured correctly.
 
-- The last part of your `redirect_url` must match the name of the identity provider.
-- Replace the `{{ variable }}`s with real values.
+### Installation
+1. Clone the OIDC Extended repository: 
+   ```
+   git clone https://github.com/empress-eco/oidc_extended.git
+   ```
+2. Follow the provided configuration example for the Social Login Key module in the project repository. Ensure to replace the `{{ variable }}`s with real values. 
 
-#### License
+## Usage
+OIDC Extended integrates with your current Empress setup effortlessly. After installation, it automatically enhances your authentication process.
 
-MIT
+## Contributing
+We encourage community contributions! Here's how you can contribute:
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## License
+This project is under the MIT License. Contributions to the project are licensed under the same.
+
+## Acknowledgements
+
+We express our profound gratitude to the Empress Community, the architects of the essential tools powering this project. Their innovation and dedication have set the foundation for our project. We sincerely appreciate their pioneering work and ongoing support.
